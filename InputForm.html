@@ -80,7 +80,22 @@
                     telError.textContent = "";
                 else telError.textContent = "telephone number is Incorrect";    
             });
+            const pwd = document.querySelector('#pwd');
+            const pwdError = document.querySelector('.pwd-error');
+            pwd.addEventListener('input',function(){
+                let pwdRegex = RegExp('^((?=.*?[#@$?])(?=.*?[A-Z])(?=.*?[0-9])[A-za-z0-9#@$?]{8,})$');
+                if(pwdRegex.test(pwd.value))
+                    pwdError.textContent = "";
+                else pwdError.textContent = "Password type is Incorrect";    
+            });
 
+            const salary = document.querySelector('#salary');
+            const output = document.querySelector('.salary-output');
+            output.textContent = salary.value;
+            salary.addEventListener('input',function(){
+                output.textContent = salary.value;
+                
+            });
         </script>
     </body>
     </html>
