@@ -72,6 +72,14 @@
                     emailError.textContent = "";
                 else emailError.textContent = "Email is Incorrect";    
             });
+            const tel = document.querySelector('#tel');
+            const telError = document.querySelector('.tel-error');
+            tel.addEventListener('input',function(){
+                let telRegex = RegExp('^(91 )[0-9]{10}$');
+                if(telRegex.test(tel.value))
+                    telError.textContent = "";
+                else telError.textContent = "telephone number is Incorrect";    
+            });
 
         </script>
     </body>
